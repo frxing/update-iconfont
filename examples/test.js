@@ -1,10 +1,9 @@
 let UpdateIconfont = require('../lib/updateIconfont.min.js')
-// import UpdateIconfont from '../lib/updateIconfont.min.js'
 const path = require('path')
 
 new UpdateIconfont({
-  url: 'https://www.iconfont.cn/api/project/detail.json?pid=1819025&t=1596523610958&ctoken=fNxPgwQz5VzGvbRVwYoykzqn',
-  cookie: 'U8AXvqwdm-42-umGXGwgKq_Emj2wuVCkA87TjZ3dn6xm2T4whio3sIKoy4kjkuBSusLMQ-0MhcjWBE1FwhfGmMbpO9xPCEANAHIhoET_7kJ_pbscGV6FmfCh8QTWcmCiTv5lhhXEW-AxLfe1otCy-b_Xu6bubgtR7jh7j4tyTxJ_XW7McfoOosNIBZqkfhF6OckVELaYsYoodJOOlKRp8eJY83tjjYVEurscncO4uYEk_mw1Sb4qLIh8DMdD1XG0lFN3X6trVyMIzJvczCR2A4nlTLnxai9pSRJ7-Gl53os6fci5p1tRMwBZUp0fsAZnGhtWgXCT4LrdSaagnXuBUChjSa6SnTBnAakCigP27vpZwfOTV5xDa3WzrQKvJ5-W1OxSCW8ugdgpwQA33VvFCIzY8zFyHP6Ai7GSuaeNb5IuVjBOWmTPJ6eQgVvcUllLHS0LBosQDoRzc1tUeFD-rLxtAfvxB3yUo-K7UOn8tNQW9AaVPlOqyysLGxZ_HickISiCyK_YzUs5i8qBQymtfNLAoIp9T3Ez9rpXgNtPD4owb4znYA-bya_7OQOWBmhhe9pbO6PifomOKXf-2RQc46gFwNGzhKfwWcS65Brb1mj2OPibCIM_O_83vHgryjp_DrO5o1E0aOeBjbwXDVHRgGjqzDWO_LYFPxC-lZt4wcBi534EtbTW-EkDTKm_dwLFzFJCVwklNCpvZHt6RVJLQdz0z0nbWspCEf64C5msyZea48AodqjdbG081uwtsR7TpZVTj1evX1tdhF-GxzBCa3I6hCfAukdWRLaX5KR6soZa207-R8jos4BXznDtgrwST64MeopPiddih6lFLQcB49Ly50dQdCm5QEs14ZN5UH3X_i0NdzdmEXxOl-cLA7mLFvQPeTcRQMq66dbh1Z3WER2o-kbF1x_UZYPjrDeKInLvyP4VediRBYdAr2ZVjCLHxzJAlxJZoRqKRMc9sBv6hFaZSzCRaEhS9DLEUnzrfnqAYy41j_zpQodNqTVvD9cep3FvP3pHS12yicTixXVm0HyEKALZYlmYdpLucub4XN9DWhpxEWGWbFFv9BjzusRUhvA3u4-DnDJP37IgFNts7Q==;',
+  url: '',
+  cookie: '',
   output: {
     path: path.resolve(__dirname, './font'),
     fileName: 'iconfont.css'
