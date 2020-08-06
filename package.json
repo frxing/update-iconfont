@@ -13,14 +13,8 @@
     "axios": "^0.16.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.1",
-    "@babel/preset-env": "^7.11.0",
     "@rollup/plugin-json": "^4.1.0",
-    "babel-loader": "^8.1.0",
-    "clean-webpack-plugin": "^3.0.0",
     "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "rollup-plugin-node-resolve": "^5.2.0"
   }
 }
