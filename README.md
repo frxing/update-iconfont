@@ -33,11 +33,11 @@
 
 ###### url 是代表项目的接口地址，找项目所在人员的账号登录，进入项目所请求的接口地址，地址必须完整，如图中的完整地址
 
-![](./pic/WX20200806-170915.png)
+![](https://github.com/frxing/update-iconfont/blob/master/pic/WX20200806-170915.png)
 
 ###### cookie是当前用户的cookie， 如果不填写，阿里会认为没有登录
 
-![](./pic/WX20200806-170431.png)
+![](https://github.com/frxing/update-iconfont/blob/master/pic/WX20200806-170431.png)
 
 ###### output.path  生成文件所在的目录，绝对路径
 
