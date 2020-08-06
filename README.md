@@ -8,7 +8,7 @@
 2. 在本地目录新建build(可自定义)目录，在build目录下新建updateIconfont.js, js内容如下
    
    ```
-   import UpDateIconfont from 'update-ali-iconfont'
+   const UpDateIconfont = require('update-ali-iconfont')
    new UpDateIconfont({
       url: '*****',
       cookie: '****',
