@@ -7,7 +7,7 @@ export default {
   output: {
     file: 'lib/updateIconfont.min.js',
     format: 'umd',
-    name: 'updateIconfont'
+    name: 'update-iconfont'
   },
   plugins: [
     resolve(),

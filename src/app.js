@@ -3,15 +3,6 @@ const url = require('url');
 const path = require('path');
 const axios = require('axios');
 
-// let config = {
-//   url: 'https://www.iconfont.cn/api/project/detail.json?pid=1819025&t=1596523610958&ctoken=fNxPgwQz5VzGvbRVwYoykzqn',
-//   cookie: 'EGG_SESS_ICONFONT=U8AXvqwdm-42-umGXGwgKq_Emj2wuVCkA87TjZ3dn6xm2T4whio3sIKoy4kjkuBSusLMQ-0MhcjWBE1FwhfGmMbpO9xPCEANAHIhoET_7kJ_pbscGV6FmfCh8QTWcmCiTv5lhhXEW-AxLfe1otCy-b_Xu6bubgtR7jh7j4tyTxJ_XW7McfoOosNIBZqkfhF6OckVELaYsYoodJOOlKRp8eJY83tjjYVEurscncO4uYEk_mw1Sb4qLIh8DMdD1XG0lFN3X6trVyMIzJvczCR2A4nlTLnxai9pSRJ7-Gl53os6fci5p1tRMwBZUp0fsAZnGhtWgXCT4LrdSaagnXuBUChjSa6SnTBnAakCigP27vpZwfOTV5xDa3WzrQKvJ5-W1OxSCW8ugdgpwQA33VvFCIzY8zFyHP6Ai7GSuaeNb5IuVjBOWmTPJ6eQgVvcUllLHS0LBosQDoRzc1tUeFD-rLxtAfvxB3yUo-K7UOn8tNQW9AaVPlOqyysLGxZ_HickISiCyK_YzUs5i8qBQymtfNLAoIp9T3Ez9rpXgNtPD4owb4znYA-bya_7OQOWBmhhe9pbO6PifomOKXf-2RQc46gFwNGzhKfwWcS65Brb1mj2OPibCIM_O_83vHgryjp_DrO5o1E0aOeBjbwXDVHRgGjqzDWO_LYFPxC-lZt4wcBi534EtbTW-EkDTKm_dwLFzFJCVwklNCpvZHt6RVJLQdz0z0nbWspCEf64C5msyZea48AodqjdbG081uwtsR7TpZVTj1evX1tdhF-GxzBCa3I6hCfAukdWRLaX5KR6soZa207-R8jos4BXznDtgrwST64MeopPiddih6lFLQcB49Ly50dQdCm5QEs14ZN5UH3X_i0NdzdmEXxOl-cLA7mLFvQPeTcRQMq66dbh1Z3WER2o-kbF1x_UZYPjrDeKInLvyP4VediRBYdAr2ZVjCLHxzJAlxJZoRqKRMc9sBv6hFaZSzCRaEhS9DLEUnzrfnqAYy41j_zpQodNqTVvD9cep3FvP3pHS12yicTixXVm0HyEKALZYlmYdpLucub4XN9DWhpxEWGWbFFv9BjzusRUhvA3u4-DnDJP37IgFNts7Q==;',
-//   output: {
-//     path: path.resolve(__dirname, './aaa'),
-//     fileName: 'iconfont.css'
-//   }
-// }
-
 class UpdateIconfont {
   constructor (options = {}) {
     this.config = Object.assign({
@@ -26,24 +17,27 @@ class UpdateIconfont {
   }
 
   init () {
-    let { config } = this
-    if (!config.ur) {
-      return new TypeError('url is be required')
+    let { url, cookie } = this.config
+    if (!url) {
+      throw new TypeError('url is be required')
     }
-    if (!config.ur) {
-      return new TypeError('cookie is be required')
+    if (!cookie) {
+      throw new TypeError('cookie is be required')
     }
-    axios.get(this.handleUrl(config.url), {
+    if (!(/^EGG_SESS_ICONFONT=/.test(cookie))) {
+      cookie = `EGG_SESS_ICONFONT=${cookie}`
+    }
+    axios.get(this.handleUrl(url), {
       headers: {
-        Cookie: config.cookie
+        Cookie: cookie
       }
     }).then(response => {
       let res = response.data;
       if (res.code === 200) {
         let data = res.data;
-        let url = data.font.css_file;
-        this.getFileContent(url);
-        console.log('获取到css文件地址', url)
+        let cssUrl = data.font.css_file;
+        this.getFileContent(cssUrl);
+        console.log('获取到css文件地址', cssUrl)
       }
     })
   }
