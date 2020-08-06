@@ -4,11 +4,11 @@
 
 ### 使用说明
 
-1. npm install update-iconfont -S
+1. npm install update-ali-iconfont -S
 2. 在本地目录新建build(可自定义)目录，在build目录下新建updateIconfont.js, js内容如下
    
    ```
-   import UpDateIconfont from 'update-iconfont'
+   import UpDateIconfont from 'update-ali-iconfont'
    new UpDateIconfont({
       url: '*****',
       cookie: '****',
