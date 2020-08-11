@@ -14,7 +14,7 @@
       cookie: '****',
       output: {
           path: '**/**',    // 输出文件的目录
-          filename: 'iconfont.css' // 输出文件名字   默认是iconfont.css
+          filenName: 'iconfont.css' // 输出文件名字   默认是iconfont.css
       }    
    })
    ```
